@@ -1,0 +1,131 @@
+[
+    {
+        "id": "3c15e6c1.f8224a",
+        "type": "mqtt out",
+        "z": "2620ef20.2409",
+        "name": "Power",
+        "topic": "moodlight/sonoff/cmnd/power",
+        "qos": "",
+        "retain": "",
+        "broker": "39a9057c.977f62",
+        "x": 342,
+        "y": 133,
+        "wires": []
+    },
+    {
+        "id": "3f0b1660.49c92a",
+        "type": "inject",
+        "z": "2620ef20.2409",
+        "name": "",
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 128,
+        "y": 79,
+        "wires": [
+            [
+                "3c15e6c1.f8224a"
+            ]
+        ]
+    },
+    {
+        "id": "531ef628.1a8ba8",
+        "type": "inject",
+        "z": "2620ef20.2409",
+        "name": "",
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 133,
+        "y": 160,
+        "wires": [
+            [
+                "3c15e6c1.f8224a"
+            ]
+        ]
+    },
+    {
+        "id": "bffe56a6.3fd4d8",
+        "type": "mqtt out",
+        "z": "2620ef20.2409",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "39a9057c.977f62",
+        "x": 357,
+        "y": 264,
+        "wires": []
+    },
+    {
+        "id": "8a22ea0a.34b488",
+        "type": "inject",
+        "z": "2620ef20.2409",
+        "name": "",
+        "topic": "moodlight/1/blue",
+        "payload": "255",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 157,
+        "y": 250,
+        "wires": [
+            [
+                "bffe56a6.3fd4d8"
+            ]
+        ]
+    },
+    {
+        "id": "4cccddfd.4b7dc4",
+        "type": "mqtt in",
+        "z": "2620ef20.2409",
+        "name": "",
+        "topic": "#",
+        "qos": "2",
+        "broker": "39a9057c.977f62",
+        "x": 441,
+        "y": 389,
+        "wires": [
+            [
+                "a8538d0f.50c64"
+            ]
+        ]
+    },
+    {
+        "id": "a8538d0f.50c64",
+        "type": "debug",
+        "z": "2620ef20.2409",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 610,
+        "y": 392,
+        "wires": []
+    },
+    {
+        "id": "39a9057c.977f62",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": " 172.18.16.25",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "hello",
+        "birthQos": "0",
+        "birthPayload": ""
+    }
+]
